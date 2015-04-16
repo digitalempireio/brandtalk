@@ -1,0 +1,17 @@
+# OS X DS Store
+.DS_Store
+
+# Node modules
+node_modules
+
+# Bower components
+bower_components
+
+# Sass cache
+.sass-cache
+
+# Temp folder
+temp
+
+# Local dev build
+dev
