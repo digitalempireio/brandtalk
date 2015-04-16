@@ -1,0 +1,11 @@
+{
+  "name": "wander-web",
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "normalize.css": "~3.0.3",
+    "ember": "1.11.1"
+  },
+  "resolutions": {
+    "ember": "~1.11.1"
+  }
+}
