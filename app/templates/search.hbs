@@ -1,5 +1,9 @@
 {{input type="text" value=query action="search"}}
 <h1>Results</h1>
 {{#each result in results}}
-  {{ result.content }}
+  <div>
+    {{ result.text }}
+  </div>
+  <br />
+  <br />
 {{/each}}

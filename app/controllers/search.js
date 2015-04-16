@@ -9,9 +9,14 @@
       search: function(){
         console.log(this.get('query'));
 
-        this.set('results', [
-          { content: 'meow '}
-        ]);
+        var that = this;
+
+        $.ajax({
+          url: 'http://localhost:3000/search/' + this.get('query'),
+          success: function(res){
+            that.set('results', res.statuses);
+          }
+        });
 
         this.set('query');
       }
