@@ -4,21 +4,27 @@
 
   App.SearchController = Ember.Controller.extend({
     query: '',
-    results: [],
+    happy: [],
+    sad: [],
     actions: {
       search: function(){
-        console.log(this.get('query'));
-
+        
         var that = this;
 
         $.ajax({
-          url: 'http://localhost:3000/search/' + this.get('query'),
+          url: 'http://localhost:3000/search/' + encodeURIComponent(this.get('query')) + '/positive',
           success: function(res){
-            that.set('results', res.statuses);
+            that.set('happy', res);
           }
         });
 
-        this.set('query');
+        $.ajax({
+          url: 'http://localhost:3000/search/' + encodeURIComponent(this.get('query')) + '/negative',
+          success: function(res){
+            that.set('sad', res);
+          }
+        });
+
       }
     }
   });

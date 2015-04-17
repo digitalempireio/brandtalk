@@ -1,9 +1,24 @@
 {{input type="text" value=query action="search"}}
 <h1>Results</h1>
-{{#each result in results}}
-  <div>
-    {{ result.text }}
+<div class="grid">
+  <div class="col-6">
+    <h2>Happy</h2>
+    {{#each tweet in happy}}
+      <div>
+        {{ tweet.text }}
+      </div>
+      <br />
+      <br />
+    {{/each}}
   </div>
-  <br />
-  <br />
-{{/each}}
+  <div class="col-6">
+    <h2>Sad</h2>
+    {{#each tweet in sad}}
+      <div>
+        {{ tweet.text }}
+      </div>
+      <br />
+      <br />
+    {{/each}}
+  </div>
+</div>

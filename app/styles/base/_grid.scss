@@ -1,0 +1,16 @@
+.grid {
+  overflow: hidden;
+}
+
+[class*=col] {
+  box-sizing: border-box;
+  float: left;
+  padding-left: $col-gutter/2;
+  padding-right: $col-gutter/2;
+}
+
+@for $i from 1 through $num-cols {
+  .col-#{$i} {
+    width: ($i/$num-cols) * 100%;
+  }
+}
