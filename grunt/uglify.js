@@ -10,7 +10,7 @@ module.exports = {
       compress: false
     },
     files: [
-      { '<%= paths.dev %>/assets/js/vendor.js' : ['bower_components/jquery/dist/jquery.min.js', 'bower_components/ember/ember.debug.js', 'bower_components/ember-data/ember-data.js'] },
+      { '<%= paths.dev %>/assets/js/vendor.js' : ['bower_components/jquery/dist/jquery.min.js', 'bower_components/ember/ember.debug.js', 'bower_components/ember-data/ember-data.js', 'bower_components/socket.io-client/socket.io.js'] },
     ]
   },
   dev_app: {
@@ -25,7 +25,7 @@ module.exports = {
   },
   dist: {
     files: [
-      { '<%= paths.dist %>/assets/js/app.js' : ['bower_components/jquery/dist/jquery.min.js', 'bower_components/ember/ember.min.js', 'bower_components/ember/ember-data.min.js', 'temp/templates.js', 'app/app.js', 'app/router.js', 'app/models/**/*.js', 'app/routes/**/*.js', 'app/controllers/**/*.js', 'app/views/**/*.js', 'app/components/**/*.js', 'app/helpers/**/*.js'] }
+      { '<%= paths.dist %>/assets/js/app.js' : ['bower_components/jquery/dist/jquery.min.js', 'bower_components/ember/ember.min.js', 'bower_components/ember/ember-data.min.js', 'bower_components/socket.io-client/socket.io.js', 'temp/templates.js', 'app/app.js', 'app/router.js', 'app/models/**/*.js', 'app/routes/**/*.js', 'app/controllers/**/*.js', 'app/views/**/*.js', 'app/components/**/*.js', 'app/helpers/**/*.js'] }
     ]
   }
 };
