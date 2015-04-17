@@ -4,32 +4,32 @@
 
   App.SearchController = Ember.ArrayController.extend({
     query: '',
+    socket: io('http://localhost:3000'),
     happyTweets: function(){
 
       return this.filter(function(tweet){
         return tweet.isSad === false;
       });
 
-    }.property('model'),
+    }.property('lastTweet'),
     sadTweets: function(){
 
       return this.filter(function(tweet){
         return tweet.isSad === true;
       });
 
-    }.property('model'),
+    }.property('lastTweet'),
     lastTweet: 0,
     actions: {
       search: function(){
 
         this.set('model', []);
 
-        var socket = io('http://localhost:3000');
-
-        socket.emit('search', this.get('query'));
+        this.get('socket').emit('search', this.get('query'));
 
         var that = this;
-        socket.on('tweet', function(tweet){
+        this.get('socket').on('tweet', function(tweet){
+          console.log(tweet.text);
           that.set('lastTweet', tweet);
           that.insertAt(0, tweet);
         });
