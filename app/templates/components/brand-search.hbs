@@ -1,0 +1,27 @@
+{{input type="text" value=query action="search"}}
+<div class="tweets wrapper">
+  <div class="grid">
+    <div class="col-6">
+      <h2>:)</h2>
+      <br />
+      {{#each tweet in happyTweets}}
+        <div>
+          {{ tweet-item tweet=tweet }}
+        </div>
+        <br />
+        <br />
+      {{/each}}
+    </div>
+    <div class="col-6">
+      <h2>:'(</h2>
+      <br />
+      {{#each tweet in sadTweets}}
+        <div>
+          {{ tweet-item tweet=tweet }}
+        </div>
+        <br />
+        <br />
+      {{/each}}
+    </div>
+  </div>
+</div>

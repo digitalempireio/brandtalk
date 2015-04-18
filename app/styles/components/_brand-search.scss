@@ -1,5 +1,6 @@
-.search {
+.brand-search {
   input {
+    @include transition(all);
     margin: 0 20%;
     padding: $line-height;
     position: absolute;
@@ -10,7 +11,10 @@
   }
 
   .tweets {
-    display: none;
+    @include transition(all);
+    opacity: 0;
+    padding-top: $search-input-height + $line-height*2;
+    visibility: hidden;
   }
 
   &.searching {
@@ -23,7 +27,8 @@
     }
 
     .tweets {
-      display: block;
+      opacity: 1;
+      visibility: visible;
     }
   }
 }
