@@ -1,0 +1,29 @@
+.search {
+  input {
+    margin: 0 20%;
+    padding: $line-height;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60%;
+  }
+
+  .tweets {
+    display: none;
+  }
+
+  &.searching {
+
+    input {
+      margin: 0 0 $line-height*2;
+      top: 0;
+      transform: none;
+      width: 100%;
+    }
+
+    .tweets {
+      display: block;
+    }
+  }
+}

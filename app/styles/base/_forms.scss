@@ -3,4 +3,8 @@ textarea {
   background: #fff;
   box-sizing: border-box;
   padding: 1em;
+
+  &:focus {
+    outline: none;
+  }
 }
