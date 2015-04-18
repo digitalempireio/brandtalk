@@ -1,11 +1,11 @@
 {{input type="text" value=query action="search"}}
-<div class="grid">
+<div class="tweets grid">
   <div class="col-6">
     <h2>:)</h2>
     <br />
     {{#each tweet in happyTweets}}
       <div>
-        {{ tweet.text }}
+        {{ tweet-item tweet=tweet }}
       </div>
       <br />
       <br />
@@ -16,7 +16,7 @@
     <br />
     {{#each tweet in sadTweets}}
       <div>
-        {{ tweet.text }}
+        {{ tweet-item tweet=tweet }}
       </div>
       <br />
       <br />
