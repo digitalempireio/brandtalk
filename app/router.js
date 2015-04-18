@@ -7,8 +7,7 @@
   });
 
   App.Router.map(function(){
-    this.route('intro', { path: '/'} );
-    this.route('search');
+    this.route('search', { path: '/'} );
   });
 
 }());
