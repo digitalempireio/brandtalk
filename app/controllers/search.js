@@ -27,7 +27,7 @@
 
         var that = this;
         $.ajax({
-          url: 'http://localhost:3000/search/' + this.get('query'),
+          url: 'http://brandtalk.herokuapp.com/search/' + this.get('query'),
           jsonp: 'callback',
           success: function(tweets){
             that.set('model', tweets);
