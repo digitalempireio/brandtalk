@@ -20,6 +20,10 @@
     width: 100%;
   }
 
+  .query-info {
+    margin-bottom: $line-height*2;
+  }
+
   .tweets {
     @include transition(all);
     opacity: 0;

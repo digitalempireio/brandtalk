@@ -25,10 +25,11 @@
 
         this.set('model', []);
         this.set('tweets', []);
+        this.set('lastQuery', this.get('query'));
 
         var that = this;
         $.ajax({
-          url: 'http://brandtalk.herokuapp.com/search/' + this.get('query'),
+          url: 'http://brandtalk.herokuapp.com/search/' + encodeURIComponent(this.get('query')),
           jsonp: 'callback',
           success: function(tweets){
             that.set('model', tweets);
