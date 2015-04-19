@@ -1,11 +1,20 @@
 input,
 textarea {
+  @include transition(border);
   background: #fff;
   border: 0;
+  border-bottom: 3px solid #ddd;
   box-sizing: border-box;
   padding: 1em;
 
+  &:hover {
+    @include transition(border);
+    border-bottom-color: #ccc;
+  }
+
   &:focus {
+    @include transition(border);
     outline: none;
+    border-bottom-color: cornflowerblue;
   }
 }

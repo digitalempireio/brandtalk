@@ -23,6 +23,7 @@
     actions: {
       search: function(){
 
+        this.set('model', []);
         this.set('tweets', []);
 
         var that = this;
