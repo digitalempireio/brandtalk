@@ -53,6 +53,7 @@
 
     .tweets {
       @include transition(all);
+      transition-duration: 1s;
       opacity: 1;
       visibility: visible;
     }
