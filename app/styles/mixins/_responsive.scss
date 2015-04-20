@@ -1,5 +1,0 @@
-@mixin responsive($screen-width-min) {
-  @media screen and (min-width: $screen-width-min){
-    @content;
-  }
-}
