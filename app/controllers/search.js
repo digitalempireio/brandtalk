@@ -1,40 +1,36 @@
-(function(){
+import Ember from 'ember';
 
-  'use strict';
+export default Ember.Controller.extend({
+  query: '',
+  happyTweets: [],
+  sadTweets: [],
+  actions: {
+    search: function(){
 
-  App.SearchController = Ember.ArrayController.extend({
-    query: '',
-    happyTweets: [],
-    sadTweets: [],
-    actions: {
-      search: function(){
+      this.set('happyTweets', []);
+      this.set('sadTweets', []);
+      this.set('lastQuery', this.get('query'));
 
-        this.set('happyTweets', []);
-        this.set('sadTweets', []);
-        this.set('lastQuery', this.get('query'));
+      var that = this;
 
-        var that = this;
+      // Request happy tweets
+      $.ajax({
+        url: 'http://brandtalk.herokuapp.com/search/' + encodeURIComponent(this.get('query')) + '/positive',
+        jsonp: 'callback',
+        success: function(tweets){
+          that.set('happyTweets', tweets);
+        }
+      });
 
-        // Request happy tweets
-        $.ajax({
-          url: 'http://brandtalk.herokuapp.com/search/' + encodeURIComponent(this.get('query')) + '/positive',
-          jsonp: 'callback',
-          success: function(tweets){
-            that.set('happyTweets', tweets);
-          }
-        });
+      // .. and sad tweets.
+      $.ajax({
+        url: 'http://brandtalk.herokuapp.com/search/' + encodeURIComponent(this.get('query')) + '/negative',
+        jsonp: 'callback',
+        success: function(tweets){
+          that.set('sadTweets', tweets);
+        }
+      });
 
-        // .. and sad tweets.
-        $.ajax({
-          url: 'http://brandtalk.herokuapp.com/search/' + encodeURIComponent(this.get('query')) + '/negative',
-          jsonp: 'callback',
-          success: function(tweets){
-            that.set('sadTweets', tweets);
-          }
-        });
-
-      }
     }
-  });
-
-}());
+  }
+});

@@ -1,27 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Tests | Wander</title>
-    <link rel="stylesheet" href="/assets/css/app.css" />
-    <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.14.0.css" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BrandtalkWeb Tests</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{content-for 'head'}}
+    {{content-for 'test-head'}}
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/brandtalk-web.css">
+    <link rel="stylesheet" href="assets/test-support.css">
+
+    {{content-for 'head-footer'}}
+    {{content-for 'test-head-footer'}}
   </head>
   <body>
-    <div id="qunit"></div>
-    <div id="ember-testing"></div>
 
+    {{content-for 'body'}}
+    {{content-for 'test-body'}}
+    <script src="assets/vendor.js"></script>
+    <script src="assets/test-support.js"></script>
+    <script src="assets/brandtalk-web.js"></script>
+    <script src="testem.js"></script>
+    <script src="assets/test-loader.js"></script>
 
-    <script src="//localhost:35729/livereload.js"></script>
-
-    <script src="/assets/js/vendor.js"></script>
-    <script src="/assets/js/templates.js"></script>
-    <script src="/assets/js/app.js"></script>
-
-    <script src="vendor/qunit.js"></script>
-    <script src="vendor/ember-qunit.js"></script>
-
-    <!-- Tests -->
-    <script src="tests.js"></script>
-    <script src="unit/components/post-item.js"></script>
-
+    {{content-for 'body-footer'}}
+    {{content-for 'test-body-footer'}}
   </body>
 </html>

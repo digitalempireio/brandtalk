@@ -1,24 +1,25 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <title>BrandTalk</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BrandtalkWeb</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta charset="utf-8" />
+    {{content-for 'head'}}
 
-    <link rel="stylesheet" href="assets/css/app.css" />
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/brandtalk-web.css">
+
+    {{content-for 'head-footer'}}
   </head>
   <body>
-    <!-- @ifdef DEV -->
-      <!-- LiveReload -->
-      <script src="//localhost:35729/livereload.js"></script>
+    {{content-for 'body'}}
 
-			<!-- Vendor and template files are compiled separately during development. -->
-			<script src="assets/js/vendor.js"></script>
-			<script src="assets/js/templates.js"></script>
-		<!-- @endif -->
-		<script src="assets/js/app.js"></script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/brandtalk-web.js"></script>
+
+    {{content-for 'body-footer'}}
   </body>
 </html>

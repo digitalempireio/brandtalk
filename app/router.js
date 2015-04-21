@@ -1,13 +1,10 @@
-(function(){
+import Ember from 'ember';
+import config from './config/environment';
 
-  'use strict';
+var Router = Ember.Router.extend({
+  location: config.locationType
+});
 
-  App.Router.reopen({
-    //location: 'history'
-  });
-
-  App.Router.map(function(){
-    this.route('search', { path: '/'} );
-  });
-
-}());
+export default Router.map(function() {
+  this.route('search', { path: '/'} );
+});

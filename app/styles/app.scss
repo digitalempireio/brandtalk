@@ -1,14 +1,22 @@
 // Util
-@import 'util/**/*';
+@import 'util/reset';
 
 // Variables
-@import 'variables/**/*';
+@import 'variables/grid';
+@import 'variables/layout';
+@import 'variables/responsive';
+@import 'variables/typography';
 
 // Mixins
-@import 'mixins/**/*';
+@import 'mixins/animations';
+@import 'mixins/responsive';
 
 // Base
-@import 'base/**/*';
+@import 'base/forms';
+@import 'base/grid';
+@import 'base/typography';
 
 // Components
-@import 'components/**/*';
+@import 'components/brand-search';
+@import 'components/hero';
+@import 'components/tweet-item';
