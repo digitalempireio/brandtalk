@@ -789,7 +789,7 @@ catch(err) {
 if (runningTests) {
   require("brandtalk-web/tests/test-helper");
 } else {
-  require("brandtalk-web/app")["default"].create({"name":"brandtalk-web","version":"0.0.0.e45a2bf6"});
+  require("brandtalk-web/app")["default"].create({"name":"brandtalk-web","version":"0.0.0.f6ee96cb"});
 }
 
 /* jshint ignore:end */
